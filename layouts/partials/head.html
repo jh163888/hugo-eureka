@@ -58,6 +58,9 @@
 {{- $eurekaCSS := $eurekaCSS | minify }}
 <link rel="stylesheet" href="{{ $eurekaCSS.Permalink }}">
 
+<!-- Netlify CMS Auth Module -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 {{- $eurekaJS := resources.Get "js/eureka.js" | resources.ExecuteAsTemplate "js/eureka.js" . | minify }}
 <script defer src="{{ $eurekaJS.Permalink }}"></script>
 
